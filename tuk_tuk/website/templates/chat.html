@@ -1,0 +1,37 @@
+
+{% extends "base.html" %}
+
+{% block title %}chat{% endblock %}
+
+{% block content %}
+
+<div class="chat-container">
+    <header class="chat-header">
+        <!-- Your header -->
+    </header>
+
+    <main id="chat-messages" class="chat-messages">
+        <!-- Messages appear here -->
+    </main>
+
+    <form id="chat-form" class="chat-form">
+         <input
+        type="text"
+        id="message-input"
+        placeholder="Ask TukTuk"
+        autocomplete="off"
+        required
+    >
+
+    <button type="submit" id="send-button" aria-label="Send message">
+        ↑
+    </button>
+    </form>
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='chat.js') }}"></script>
+{% endblock %}

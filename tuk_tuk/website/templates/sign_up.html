@@ -1,0 +1,88 @@
+
+{% extends "base.html" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-7 col-lg-6">
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+                <h2 class="text-center mb-2">Create Account</h2>
+                <p class="text-center text-muted mb-4">
+                    Join Tuk_Tuk today!
+                </p>
+
+                <form method="POST" action="{{ url_for('auth.sign_up') }}">
+                    <div class="mb-3">
+                        <label for="firstName" class="form-label">
+                            Full Name
+                        </label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="firstName"
+                            name="firstName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">
+                            Email Address
+                        </label>
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password1" class="form-label">
+                            Password
+                        </label>
+                        <input
+                            type="password"
+                            class="form-control"
+                            id="password1"
+                            name="password1"
+                            placeholder="Create a password"
+                            minlength="8"
+                            required
+                        >
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password2" class="form-label">
+                            Confirm Password
+                        </label>
+                        <input
+                            type="password"
+                            class="form-control"
+                            id="password2"
+                            name="password2"
+                            placeholder="Enter password again"
+                            minlength="8"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="btn btn-dark w-100">
+                        Create Account
+                    </button>
+                </form>
+
+                <p class="text-center mt-3 mb-0">
+                    Already have an account?
+                    <a href="{{ url_for('auth.login') }}">Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
